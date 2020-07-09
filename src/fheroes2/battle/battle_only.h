@@ -23,6 +23,7 @@
 #ifndef H2BATTLE_ONLY_H
 #define H2BATTLE_ONLY_H
 
+#include <memory>
 #include "army.h"
 #include "heroes_recruits.h"
 #include "players.h"
@@ -64,23 +65,23 @@ namespace Battle
         Army * army2;
         Army monsters;
 
-        MoraleIndicator * moraleIndicator1;
-        MoraleIndicator * moraleIndicator2;
+        std::unique_ptr<MoraleIndicator> moraleIndicator1;
+        std::unique_ptr<MoraleIndicator> moraleIndicator2;
 
-        LuckIndicator * luckIndicator1;
-        LuckIndicator * luckIndicator2;
+        std::unique_ptr<LuckIndicator> luckIndicator1;
+        std::unique_ptr<LuckIndicator> luckIndicator2;
 
-        PrimarySkillsBar * primskill_bar1;
-        PrimarySkillsBar * primskill_bar2;
+        std::unique_ptr<PrimarySkillsBar> primskill_bar1;
+        std::unique_ptr<PrimarySkillsBar> primskill_bar2;
 
-        SecondarySkillsBar * secskill_bar1;
-        SecondarySkillsBar * secskill_bar2;
+        std::unique_ptr<SecondarySkillsBar> secskill_bar1;
+        std::unique_ptr<SecondarySkillsBar> secskill_bar2;
 
-        ArmyBar * selectArmy1;
-        ArmyBar * selectArmy2;
+        std::unique_ptr<ArmyBar> selectArmy1;
+        std::unique_ptr<ArmyBar> selectArmy2;
 
-        ArtifactsBar * selectArtifacts1;
-        ArtifactsBar * selectArtifacts2;
+        std::unique_ptr<ArtifactsBar> selectArtifacts1;
+        std::unique_ptr<ArtifactsBar> selectArtifacts2;
 
         ControlInfo * cinfo2;
 
