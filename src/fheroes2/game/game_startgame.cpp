@@ -29,6 +29,7 @@
 
 #include "agg.h"
 #include "ai.h"
+#include "army_bar.h"
 #include "battle_only.h"
 #include "castle.h"
 #include "cursor.h"
@@ -40,6 +41,7 @@
 #include "game_over.h"
 #include "ground.h"
 #include "heroes.h"
+#include "heroes_indicator.h"
 #include "kingdom.h"
 #include "m82.h"
 #include "maps_tiles.h"
