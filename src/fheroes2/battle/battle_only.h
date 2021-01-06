@@ -28,6 +28,7 @@
 #include "heroes_recruits.h"
 #include "image.h"
 #include "players.h"
+#include "skill_bar.h"
 
 class ArmyBar;
 class PrimarySkillsBar;

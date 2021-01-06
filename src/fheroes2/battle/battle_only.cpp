@@ -35,7 +35,6 @@
 #include "kingdom.h"
 #include "race.h"
 #include "settings.h"
-#include "skill_bar.h"
 #include "text.h"
 #include "world.h"
 
@@ -100,10 +99,10 @@ Battle::Only::Only()
     , selectArtifacts1( nullptr )
     , selectArtifacts2( nullptr )
     , cinfo2( nullptr )
-    , rt1( 36, 267, 43, 53 )
-    , sfb1( rt1.w, rt1.h )
-    , rt2( 23, 347, 34, 34 )
-    , sfb2( rt2.w, rt2.h )
+    // , rt1( 36, 267, 43, 53 )
+    // , sfb1( rt1.w, rt1.h )
+    // , rt2( 23, 347, 34, 34 )
+    // , sfb2( rt2.w, rt2.h )
 {
     player1.SetControl( CONTROL_HUMAN );
     player2.SetControl( CONTROL_AI );
@@ -462,11 +461,11 @@ void Battle::Only::UpdateHero1( const Point & cur_pt )
         player1.SetColor( Color::BLUE );
         player1.SetRace( hero1->GetRace() );
 
-        moraleIndicator1 = std::unique_ptr<MoraleIndicator>(new MoraleIndicator(*hero1));
-        moraleIndicator1->SetPos( Point( cur_pt.x + 34, cur_pt.y + 75 ), true );
+        moraleIndicator1 = std::unique_ptr<MoraleIndicator>(new MoraleIndicator(hero1));
+        moraleIndicator1->SetPos( Point( cur_pt.x + 34, cur_pt.y + 75 ));
 
-        luckIndicator1 = std::unique_ptr<LuckIndicator>(new LuckIndicator(*hero1));
-        luckIndicator1->SetPos( Point( cur_pt.x + 34, cur_pt.y + 115 ), true );
+        luckIndicator1 = std::unique_ptr<LuckIndicator>(new LuckIndicator(hero1));
+        luckIndicator1->SetPos( Point( cur_pt.x + 34, cur_pt.y + 115 ));
 
         primskill_bar1 = std::unique_ptr<PrimarySkillsBar>(new PrimarySkillsBar(hero1, true));
         primskill_bar1->SetColRows( 1, 4 );
@@ -502,11 +501,11 @@ void Battle::Only::UpdateHero2( const Point & cur_pt )
         player2.SetColor( Color::RED );
         player2.SetRace( hero2->GetRace() );
 
-        moraleIndicator2 = std::unique_ptr<MoraleIndicator>(new MoraleIndicator(*hero2));
-        moraleIndicator2->SetPos( Point( cur_pt.x + 566, cur_pt.y + 75 ), true );
+        moraleIndicator2 = std::unique_ptr<MoraleIndicator>(new MoraleIndicator(hero2));
+        moraleIndicator2->SetPos( Point( cur_pt.x + 566, cur_pt.y + 75 ));
 
-        luckIndicator2 = std::unique_ptr<LuckIndicator>(new LuckIndicator(*hero2));
-        luckIndicator2->SetPos( Point( cur_pt.x + 566, cur_pt.y + 115 ), true );
+        luckIndicator2 = std::unique_ptr<LuckIndicator>(new LuckIndicator(hero2));
+        luckIndicator2->SetPos( Point( cur_pt.x + 566, cur_pt.y + 115 ));
 
         primskill_bar2 = std::unique_ptr<PrimarySkillsBar>(new PrimarySkillsBar(hero2, true));
         primskill_bar2->SetColRows( 1, 4 );
